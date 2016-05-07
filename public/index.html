@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Metadata Microservice landing page</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <p> Select a file, then press Upload.</p>
+    <form id="upload" enctype="multipart/form-data">
+      <input type="file" name="myfile">
+      <input type="submit" value="Upload">
+    </form>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $('form').on('submit', function(event) {
+          event.stopPropagation();
+          event.preventDefault();
+
+          $.ajax({
+            url: window.location.origin + '/upload/',
+            type: 'POST',
+            data: new FormData($('form')[0]),
+            cache: false,
+            processData: false,
+            contentType: false,
+            error: function(jqXHR, textStatus, errorThrown) {
+              alert('ERROR: '+textStatus);
+            },
+            success: function(data) {
+              alert('File Size: '+data.fileSize);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

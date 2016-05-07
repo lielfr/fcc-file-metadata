@@ -1,0 +1,16 @@
+{
+  "name": "fcc-file-metadata",
+  "version": "1.0.0",
+  "description": "This is my solution to FCC's File Metadata Microservice challenge. If  you are interested in the challenge itself, please visit this page:  https://www.freecodecamp.com/challenges/file-metadata-microservice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "multer": "^1.1.0"
+  }
+}
